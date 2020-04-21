@@ -73,7 +73,7 @@ def remove_beginning(lineNum):
     geoData.close()
 
     lineCount = 1
-    with open('logs_original.txt') as file:
+    with open('logs_fixed.txt') as file:
         for line in file:
             if lineCount < lineNum:
                 lineCount += 1
@@ -165,7 +165,7 @@ def adduct_data():
 ## Function for comparing logs of measurements and geodata.
 ## It selects geodata for existing measurements only.
     
-    log = open('logs_original.txt', 'r')
+    log = open('logs_fixed.txt', 'r')
     geoData = open('geo_original.txt', 'r')
     geoResult = open('geo_meaningful.txt', 'w')
 
@@ -199,3 +199,12 @@ def adduct_data():
     log.close()
     geoData.close()
     geoResult.close()
+
+
+def delete_first_lines():
+    with open('logs_original.txt', 'r') as f:
+        with open("logs_fixed.txt",'w') as f1:
+            f.readline()
+            f.readline()
+            for line in f:
+                f1.write(line)

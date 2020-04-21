@@ -4,6 +4,7 @@
 import support_module as sm
 
 ## Preparing: extract meaningful geo data and remove redundant data before 751th line
+sm.delete_first_lines()
 sm.adduct_data()
 sm.remove_beginning(751)
 
@@ -95,8 +96,7 @@ for i in range(0, numPoints):
     oxyPercentFile.write('{:.1f}'.format(points[i]['oxy_percent']) + '\n')
     oxyMglFile.write('{:.1f}'.format(points[i]['oxy_mgl']) + '\n')
     condFile.write('{:.1f}'.format(points[i]['cond']) + '\n')
-    #coordFile.write('{:.7f} {:.7f}'.format(points[i]['coord'][0], points[i]['coord'][1]) + '\n')
-    coordFile.write('{:.7f}'.format(points[i]['coord'][0]) + '\n')
+    coordFile.write('{:.7f} {:.7f}'.format(points[i]['coord'][0], points[i]['coord'][1]) + '\n')
 
 for i in range(0, len(planPath)):
     coordRealFile.write('{:.7f} {:.7f}'.format(planPath[i][0], planPath[i][1]) + '\n')
