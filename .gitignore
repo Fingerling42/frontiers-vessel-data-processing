@@ -2,3 +2,11 @@ matlab-cartesian/
 matlab-interpolation/
 python-interpolation
 /data-mapping/map_google.py
+/conductivity.txt
+/coordinates_plan.txt
+/coordinates_real.txt
+/oxygen_mgl.txt
+/oxygen_percent.txt
+/phs.txt
+/temperature.txt
+/times.txt
