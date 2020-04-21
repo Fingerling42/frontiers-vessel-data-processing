@@ -57,14 +57,14 @@ folium.PolyLine(
 
 folium.Marker(
     points[0].get('coord'),
-    icon=folium.Icon(color='green'),
+    icon=folium.Icon(icon='flag'),
     tooltip='Start',
     ).add_to(fgvPath)
 
 folium.Marker(
     points[len(points)-1].get('coord'),
     tooltip='End',
-    icon=folium.Icon(color='red'),
+    icon=folium.Icon(icon='remove'),
     ).add_to(fgvPath)
 
 fmap.add_child(fgvPath)
@@ -84,21 +84,21 @@ fgvPath = folium.FeatureGroup(name='plan', show=False)
 folium.PolyLine(
     planPath, 
     color="white", 
-    weight=5,
+    weight=20,
     opacity=1
     ).add_to(fgvPath)
 
-folium.Marker(
-    planPath[0],
-    icon=folium.Icon(color='green'),
-    tooltip='Start',
-    ).add_to(fgvPath)
+#folium.Marker(
+#    planPath[0],
+#    icon=folium.Icon(icon='flag'),
+#    tooltip='Start',
+#    ).add_to(fgvPath)
 
-folium.Marker(
-    planPath[len(planPath)-1],
-    icon=folium.Icon(color='red'),
-    tooltip='End',
-    ).add_to(fgvPath)
+#folium.Marker(
+#    planPath[len(planPath)-1],
+#    icon=folium.Icon(icon='remove'),
+#    tooltip='End',
+#    ).add_to(fgvPath)
 
 fmap.add_child(fgvPath)
 
